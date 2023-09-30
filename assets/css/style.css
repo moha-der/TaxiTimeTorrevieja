@@ -1,7 +1,62 @@
+html {
+  overflow-x: hidden;
+}
+
 body {
   font-family: "Poppins", sans-serif;
   color: #040000;
   background-color: #ffffff;
+}
+
+.layout_padding {
+  padding: 40px 0;
+}
+
+.layout_padding2 {
+  padding: 45px 0;
+}
+
+.layout_padding2-top {
+  padding-top: 45px;
+}
+
+.layout_padding2-bottom {
+  padding-bottom: 45px;
+}
+
+.layout_padding-top {
+  padding-top: 90px;
+}
+
+.layout_padding-bottom {
+  padding-bottom: 90px;
+}
+
+.heading_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 45px;
+}
+
+.heading_container h2 {
+  position: relative;
+  margin: 0;
+  padding: 10px 0;
+}
+
+.heading_container h2::before {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 100%;
+  top: 50%;
+  right: -45px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  z-index: 1;
+  background-color: #dbc64c;
+  background-repeat: no-repeat;
 }
 
 .navbar-nav {
@@ -313,4 +368,61 @@ a:focus {
   background-image: url(../images/bg-taxi.png);
   background-size: 100%;
   background-repeat: no-repeat;
+}
+
+/* Services */
+.service_section {
+  width: 95%;
+  margin: auto;
+  margin-top: 20px;
+  border: 1px solid #e5e5e5;
+}
+
+.service_section .service_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.service_section .service_container .box .img-box {
+  height: 85px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.service_section .service_container .box .img-box img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.service_section .service_container .box .detail-box {
+  margin-top: 15px;
+}
+
+.service_section .service_container .box .detail-box h5 {
+  font-weight: bold;
+}
+
+.service_section .service_container .box .detail-box a {
+  display: inline-block;
+  padding: 7px 20px;
+  border: 1px solid #0b0b0a;
+  background-color: transparent;
+  color: #0b0b0a;
+}
+
+.service_section .service_container .box .detail-box a:hover {
+  background-color: #0b0b0a;
+  color: #ffffff;
 }
