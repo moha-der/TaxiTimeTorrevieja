@@ -588,8 +588,6 @@ pre code {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
 }
 
 .no-gutters {
@@ -7777,10 +7775,8 @@ button.bg-dark:focus {
 
 .fixed-top {
   position: fixed;
+  width: 100%;
   top: 0;
-  right: 0;
-  left: 0;
-  z-index: 1030;
 }
 
 .fixed-bottom {

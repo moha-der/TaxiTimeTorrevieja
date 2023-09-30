@@ -162,7 +162,7 @@ a:focus {
 
 
 .slider_section div#carouselExampleIndicators {
-  width: 130%;
+  width: 100%;
   margin-left: -20%;
   position: unset;
 }
@@ -192,7 +192,9 @@ a:focus {
 }
 
 .slider_section .box .img-box {
-  margin: 0 7%;
+  margin: 0 0;
+  width: 100%;
+  margin-left: 40px;
 }
 
 .slider_section .box .img-box img {
@@ -290,3 +292,25 @@ a:focus {
   background-color: #dbc64c;
 }
 
+
+/* Moha Slider*/
+.slider_hero{
+  position: relative;
+  height: 60vh;
+  width: 100%;
+  margin-top: 50px;
+  background-image: url(../images/bg-torrevieja.jpeg);
+  background-size: cover;
+}
+
+.slider_hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 80%;
+  background-image: url(../images/bg-taxi.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
