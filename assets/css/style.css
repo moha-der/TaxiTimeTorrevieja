@@ -169,7 +169,7 @@ a:focus {
 .hero_area {
   height: 80%;
   position: relative;
-  background-image: url(../images/bg-torrevieja.jpeg);
+  background-image: url(../images/herooo.jpeg);
   background-size: cover;
   top: 15px;
 }
@@ -181,7 +181,7 @@ a:focus {
   left: 0;
   height: 100%;
   width: 80%;
-  background-image: url(../images/bg-taxi.png);
+  background-image: url(../images/bg-ttaxi.png);
   background-size: 100%;
   background-repeat: no-repeat;
 }
@@ -241,9 +241,8 @@ a:focus {
 
 .slider_section .box .detail-box h1 {
   font-weight: bold;
-  margin-bottom: 30px;
-  text-transform: uppercase;
-  font-size: 3rem;
+  font-size: 25px;
+  color: #f7c621;
 }
 
 .slider_section .box .img-box {
@@ -264,10 +263,10 @@ a:focus {
   text-align: center;
   display: inline-block;
   padding: 8px 30px;
-  border: 1px solid #0b0b0a;
+  border: 1px solid #f7c621;
   border-radius: 10px;
   background-color: transparent;
-  color: #0b0b0a;
+  color: #f7c621;
   font-weight: bold;
 }
 
@@ -354,7 +353,7 @@ a:focus {
   height: 60vh;
   width: 100%;
   margin-top: 50px;
-  background-image: url(../images/bg-torrevieja.jpeg);
+  background-image: url(../images/herooo.jpeg);
   background-size: cover;
 }
 
@@ -388,6 +387,18 @@ a:focus {
           justify-content: space-between;
 }
 
+.service_container .box {
+  border: 1px solid #f7c621;
+  padding-bottom: 10px;
+  border-radius: 10px;
+}
+
+.service_container hr {
+  border-top: 1px solid #f7c621;
+  display: inline-block;
+  width: 80%;
+}
+
 .service_section .service_container .box .img-box {
   height: 85px;
   display: -webkit-box;
@@ -399,6 +410,7 @@ a:focus {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+          margin-top: 10px;
 }
 
 .service_section .service_container .box .img-box img {
@@ -425,4 +437,25 @@ a:focus {
 .service_section .service_container .box .detail-box a:hover {
   background-color: #0b0b0a;
   color: #ffffff;
+}
+
+.service-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  margin-right: 10px;
+}
+
+.service-list img{
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.price {
+  margin-bottom: 0px;
+  font-size: 30px;
+  font-weight: bold;
 }
