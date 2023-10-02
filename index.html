@@ -190,7 +190,7 @@
               <p class="price">50€</p>
               <p>One way</p>
             </div>
-            <button onclick="hideForm()" >
+            <button onclick="hideNationalForm()" id="national_button">
               Book Now!
             </button>
             <div id="national_form" class="d-none book_form">
@@ -217,7 +217,7 @@
                       <input type="number" class="form-control" id="inputDestination" placeholder="Phone Number">
                     </div>
                   </div>
-                  <div class="form-group col-12 col-lg-8">
+                  <div class="form-group col-12">
                     <div class="input-group ">
                       <div class="input-group-prepend">
                         <div class="input-group-text">
@@ -225,16 +225,6 @@
                         </div>
                       </div>
                       <input type="text" class="form-control" id="inputDestination" placeholder="Email">
-                    </div>
-                  </div>
-                  <div class="form-group col-12 col-lg-4">
-                    <div class="input-group ">
-                      <div class="input-group-prepend">
-                        <div class="input-group-text">
-                          <i class="fa fa-plane" aria-hidden="true"></i>
-                        </div>
-                      </div>
-                      <input type="text" class="form-control" id="inputDestination" placeholder="Nº Flight">
                     </div>
                   </div>
                 </div>
@@ -246,13 +236,7 @@
                           <i class="fa fa-map-marker" aria-hidden="true"></i>
                         </div>
                       </div>
-                      <select id="origin-select" class="form-control" aria-label=".form-select-sm example">
-                        <option selected>Select Origin Airport</option>
-                        <option value="1">Alicante Airport</option>
-                        <option value="2">Murcia Airport</option>
-                        <option value="3">Valencia Airport</option>
-                        <option value="4">Torrevieja</option>
-                      </select>
+                      <input type="text" class="form-control" id="inputDestination" placeholder="Origin Destination">
                     </div>
                   </div>
                   <div class="form-group col-12 col-lg-6">
@@ -262,13 +246,7 @@
                           <i class="fa fa-map-marker" aria-hidden="true"></i>
                         </div>
                       </div>
-                      <select id="drop-select" class="form-control" aria-label=".form-select-sm example">
-                        <option selected>Select Drop location</option>
-                        <option value="1">Alicante Airport</option>
-                        <option value="2">Murcia Airport</option>
-                        <option value="3">Valencia Airport</option>
-                        <option value="4">Torrevieja</option>
-                      </select>
+                      <input type="text" class="form-control" id="inputDestination" placeholder="Drop destination">
                     </div>
                   </div>
                 </div>
@@ -353,7 +331,7 @@
                 </div>
                 <div class="btn-box">
                   <button type="submit" class="btn-form">Book Now!</button>
-                  <button onclick="cancelForm()" class="btn-form">Cancel</button>
+                  <button onclick="cancelNationalForm()" class="btn-form">Cancel</button>
                 </div>
               </form>
             </div>
@@ -574,10 +552,10 @@
               <p class="price">50€</p>
               <p>One way</p>
             </div>
-            <button onclick="hideForm()" >
+            <button onclick="hideRenfeForm()" id="renfe_button">
               Book Now!
             </button>
-            <div id="booking_form" class="d-none book_form">
+            <div id="renfe_form" class="d-none book_form">
               <h4>Make your reservation</h4>
               <form>
                 <div class="form-row">
@@ -630,11 +608,11 @@
                           <i class="fa fa-map-marker" aria-hidden="true"></i>
                         </div>
                       </div>
-                      <select id="origin-select" class="form-control" aria-label=".form-select-sm example">
-                        <option selected>Select Origin Airport</option>
-                        <option value="1">Alicante Airport</option>
-                        <option value="2">Murcia Airport</option>
-                        <option value="3">Valencia Airport</option>
+                      <select id="origin-station" class="form-control" aria-label=".form-select-sm example">
+                        <option selected>Select Origin location</option>
+                        <option value="1">Alicante Station</option>
+                        <option value="2">Murcia Station</option>
+                        <option value="3">Valencia Station</option>
                         <option value="4">Torrevieja</option>
                       </select>
                     </div>
@@ -646,7 +624,7 @@
                           <i class="fa fa-map-marker" aria-hidden="true"></i>
                         </div>
                       </div>
-                      <select id="drop-select" class="form-control" aria-label=".form-select-sm example">
+                      <select id="drop-station" class="form-control" aria-label=".form-select-sm example">
                         <option selected>Select Drop location</option>
                         <option value="1">Alicante Airport</option>
                         <option value="2">Murcia Airport</option>
@@ -737,7 +715,7 @@
                 </div>
                 <div class="btn-box">
                   <button type="submit" class="btn-form">Book Now!</button>
-                  <button onclick="cancelForm()" class="btn-form">Cancel</button>
+                  <button onclick="cancelRenfeForm()" class="btn-form">Cancel</button>
                 </div>
               </form>
             </div>

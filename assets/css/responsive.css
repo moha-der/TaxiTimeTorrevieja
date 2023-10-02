@@ -141,3 +141,9 @@
     margin-left: 10px;
   }
 }
+
+@media screen and (min-width: 768px) and (max-width: 1180px){
+.container {
+  max-width: 100%;
+}
+}
