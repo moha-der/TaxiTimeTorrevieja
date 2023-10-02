@@ -257,6 +257,7 @@ a:focus {
 
 .slider_section .box .btn-box {
   margin-top: 15px;
+  margin-left: -30px;
 }
 
 .slider_section .box .btn-box a {
@@ -542,4 +543,17 @@ a:focus {
 .btn-box .btn-form{
   margin-right: 10px;
   border-radius: 10px;
+}
+
+
+.availability_section {
+  background-color: #f7c621;
+  margin-top: 10px;
+  padding-top: 20px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.availability_section span {
+  color: whitesmoke;
 }
