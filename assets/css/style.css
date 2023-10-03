@@ -727,11 +727,15 @@ a:focus {
     line-height: 1.25em !important;
 }
 
-.gallery_section {
+.best_to_see {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .imagenes {
   max-height: 500px !important;
   width: auto !important;
 }
+
 
