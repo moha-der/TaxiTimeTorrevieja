@@ -89,6 +89,10 @@ a:focus {
           box-shadow: none;
 }
 
+.btn-box i {
+  margin-right: 10px;
+}
+
 .custom_nav-container {
   z-index: 99999;
   padding: 1px 15px;
@@ -263,7 +267,7 @@ a:focus {
 .slider_section .box .btn-box a {
   text-align: center;
   display: inline-block;
-  padding: 8px 30px;
+  padding: 8px 10px;
   border: 1px solid #f7c621;
   border-radius: 10px;
   background-color: transparent;
@@ -736,6 +740,23 @@ a:focus {
 .imagenes {
   max-height: 500px !important;
   width: auto !important;
+}
+
+.btn-book {
+  text-align: center;
+    display: inline-block;
+    padding: 8px 10px;
+    border: 1px solid #f7c621;
+    border-radius: 10px;
+    background-color: #343a40;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.btn-book i {
+  padding-right: 5px;
 }
 
 
