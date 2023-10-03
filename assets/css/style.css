@@ -173,22 +173,11 @@ a:focus {
 .hero_area {
   height: 80%;
   position: relative;
-  background-image: url(../images/herooo.jpeg);
+  background-image: url(../images/background/herooo.jpeg);
   background-size: cover;
   top: 15px;
 }
 
-.hero_area::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 80%;
-  background-image: url(../images/bg-ttaxi.png);
-  background-size: 100%;
-  background-repeat: no-repeat;
-}
 
 /* slider section */
 .slider_section {
@@ -351,28 +340,6 @@ a:focus {
   background-color: #dbc64c;
 }
 
-
-/* Moha Slider*/
-.slider_hero{
-  position: relative;
-  height: 60vh;
-  width: 100%;
-  margin-top: 50px;
-  background-image: url(../images/herooo.jpeg);
-  background-size: cover;
-}
-
-.slider_hero::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 80%;
-  background-image: url(../images/bg-taxi.png);
-  background-size: 100%;
-  background-repeat: no-repeat;
-}
 
 /* Services */
 .service_section {
@@ -618,6 +585,13 @@ a:focus {
   border-radius: 10px;
 }
 
+.why_section {
+  background-image: url('../images/background/bg-torrevieja.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-bottom: -10px;
+}
+
 .why_section .box {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -635,6 +609,7 @@ a:focus {
   padding: 25px 25px 45px 25px;
   background: #f7c621;
   color: black;
+  border-radius: 10px;
 }
 
 .why_section .box.b2 {
@@ -791,6 +766,7 @@ a:focus {
   width: 1.5rem !important;
     line-height: 1.25em !important;
 }
+
 
 .best_to_see {
   display: flex;
