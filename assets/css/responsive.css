@@ -48,6 +48,11 @@
     width: 100%;
   }
 
+  .why_section .box,
+    .app_section .img-box {
+        margin-top: 45px;
+    }
+
 }
 
 @media (max-width: 768px) {
@@ -139,9 +144,6 @@
   }
   .service-list {
     margin-left: 10px;
-  }
-  .gallery_section {
-    margin-left: -30%;
   }
 }
 

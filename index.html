@@ -37,7 +37,7 @@
   <header class="header_section ">
     <div class="container-fluid">
       <nav class="navbar fixed-top navbar-expand-lg bg-dark custom_nav-container ">
-        <a class="navbar-brand logo" href="index.html">
+        <a class="navbar-brand" href="index.html">
           <img src="assets/images/logos.png" alt="">
         </a>
         <div class="dropdown d-lg-none text-white language-dropdown">
@@ -56,16 +56,16 @@
         <div class="collapse navbar-collapse ml-auto  " id="navbarSupportedContent">
           <ul class="navbar-nav  ">
             <li class="nav-item ">
-              <a class="nav-link" href="index.html">Home </a>
+              <a class="nav-link" href="#home">Home </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about.html">About </a>
+              <a class="nav-link" href="#about">About </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#service">Service</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="blog.html">Contact</a>
+              <a class="nav-link" href="#contact">Contact</a>
             </li>
           </ul>
           <div class="d-lg-block d-none dropdown text-white">
@@ -82,7 +82,7 @@
   <!-- end header section -->
 
   <!-- Start Hero Section-->
-  <div  class="hero_area">
+  <div  class="hero_area" id="home">
   <section class=" slider_section ">
     <div class="container-fluid">
       <div class="row">
@@ -736,7 +736,7 @@
     </div>
    </div>
 
-  <section class="about_section layout_padding">
+  <section class="about_section layout_padding" id="about">
     <div class="container">
       <div class="row">
         <div class="col-lg-4 col-md-5 offset-lg-2 offset-md-1">
@@ -780,8 +780,81 @@
     </div>
    </div>
 
+   <section class="why_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+          Why Choose Us
+        </h2>
+      </div>
+      <div class="why_container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="box b1">
+              <div class="img-box">
+                <img src="assets/images/w1.png" alt="" class="" />
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Fast & Easy Booking
+                </h5>
+                <p>
+                  It is a long established fact that a reader will be distracted
+                  by the readable content of a page when looking at its It is a
+                  long established fact that a reader
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="box b2">
+              <div class="img-box">
+                <img src="assets/images/w2.png" alt="" class="" />
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Fully Reliable
+                </h5>
+                <p>
+                  It is a long established fact that a reader will be distracted
+                  by the readable content of a page when looking at its It is a
+                  long established fact that a reader
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="box b3">
+              <div class="img-box">
+                <img src="assets/images/w3.png" alt="" class="" />
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Full Satisfaction
+                </h5>
+                <p>
+                  It is a long established fact that a reader will be distracted
+                  by the readable content of a page when looking at its It is a
+                  long established fact that a reader
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-   <section class="gallery_section layout_padding">
+  <div class="availability_section container-fluid">
+    <div class="row">
+      <div class="col-12 text-center">
+        <p><span>1</span> TO <span>7</span> PASSENGERS WITH ADAPTED <span><i class="fa fa-wheelchair"></i></span></p>
+        <p>WE ACCEPT <span>CARD</span> PAYMENTS</p>
+      </div>
+    </div>
+   </div>
+
+   <section class="gallery_section layout_padding" id="gallery">
     <div class="container">
         <div class="heading_container best_to_see">
           <h2>
@@ -821,13 +894,6 @@
     </div>
    </section> 
 
-   <div class="availability_section container-fluid">
-    <div class="row">
-      <div class="col-12 text-center">
-        <p><span>1</span> TO <span>7</span> PASSENGERS WITH ADAPTED <span><i class="fa fa-wheelchair"></i></span></p>
-      </div>
-    </div>
-   </div>
 
   <!-- info section -->
   <section class="info_section ">
@@ -837,10 +903,8 @@
         <div class="row ">
           <div class="col-md-4 col-lg-3">
             <div class="info_detail">
-              <a href="index.html">
-                <h4>
-                  TaxiTimeTorrevieja
-                </h4>
+              <a href="index.html" class="logo">
+                <img class="img-fluid footer-logo" src="assets/images/logos.png" alt="">
               </a>
               <p>
                 Información adicional
@@ -893,7 +957,7 @@
   <!-- footer section -->
   <footer class="footer_section">
     <div class="container">
-      <p>
+      <p>TaxiTimeTorrevieja
         &copy; <span id="displayYear"></span> All Rights Reserved By
         <a href="https://html.design/">Mohammed Derfoufi</a>
       </p>
