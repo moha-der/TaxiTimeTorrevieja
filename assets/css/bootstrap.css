@@ -3038,7 +3038,8 @@ input[type="button"].btn-block {
 .dropdown-toggle::after {
   display: inline-block;
   margin-left: 0.255em;
-  vertical-align: 0.255em;
+  font-size: 20px;
+  color: #f7c621;
   content: "";
   border-top: 0.3em solid;
   border-right: 0.3em solid transparent;
@@ -6237,9 +6238,6 @@ a.close.disabled {
   margin-right: -100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  transition: -webkit-transform 0.6s ease-in-out;
-  transition: transform 0.6s ease-in-out;
-  transition: transform 0.6s ease-in-out, -webkit-transform 0.6s ease-in-out;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -6308,9 +6306,10 @@ a.close.disabled {
   justify-content: center;
   width: 15%;
   color: #fff;
+  background-color: transparent;
+  border: none;
   text-align: center;
-  opacity: 0.5;
-  transition: opacity 0.15s ease;
+  opacity: 0.9;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -6384,7 +6383,6 @@ a.close.disabled {
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
   opacity: .5;
-  transition: opacity 0.6s ease;
 }
 
 @media (prefers-reduced-motion: reduce) {
