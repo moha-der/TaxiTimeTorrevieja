@@ -1,17 +1,22 @@
 <?php 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-    $to = $_POST["emailStation"]; // this is your Email address
+    $to = $_POST["email"]; // this is your Email address
     $from = "simo.derfoufi.99@gmail.com"; // this is the sender's Email address
-    $first_name = $_POST["nameStation"];
-    $phone_number = $_POST["numberStation"];
-    $email = $_POST["emailStation"];
-    $origin = $_POST["originStation"];
-    $drop = $_POST["dropStation"];
-    $date = $_POST["DateStation"];
-    $time = $_POST["TimeStation"];
-    $adults = $_POST["adultStation"];
-    $child = $_POST["childStation"];
-    $payment = $_POST["paymentStation"];
+    $first_name = $_POST["name"];
+    $phone_number = $_POST["number"];
+    $email = $_POST["email"];
+    if (isset($_POST["flight"])) {
+        $flight = $_POST["flight"];
+    } else {
+        $flight = "";
+    }
+    $origin = $_POST["origin"];
+    $drop = $_POST["drop"];
+    $date = $_POST["Date"];
+    $time = $_POST["Time"];
+    $adults = $_POST["adult"];
+    $child = $_POST["child"];
+    $payment = $_POST["payment"];
     $subject = "Booking dates";
 
     $message = '
@@ -45,6 +50,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       <tr><td>Name: </td><td>'.$first_name.'</td></tr>
       <tr><td>Phone Number: </td><td>'.$phone_number.'</td></tr>
       <tr><td>Email: </td><td>'.$email.'</td></tr>
+      <tr><td>Flight: </td><td>'.$flight.'</td></tr>
       <tr><td>Origin Location: </td><td>'.$origin.'</td></tr>
       <tr><td>Drop Location: </td><td>'.$drop.'</td></tr>
       <tr><td>Date: </td><td>'.$date.'</td></tr>
@@ -60,7 +66,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $headers = "MIME-Version: 1.0" . "\r\n";
     $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
     $headers .= 'From: simo.derfoufi.99@gmail.com' . "\r\n";
-    mail($to,$subject,$message,$headers);
+    //mail($to,$subject,$message,$headers);
     $response = array("mensaje" => "OK");
     header("Content-Type: application/json");
     echo json_encode($response);

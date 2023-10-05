@@ -1,29 +1,30 @@
 /* National Services */ 
 let national_form = document.getElementById('national_form');
 let nationalButton = document.getElementById('national_button');
-let messageSucess = document.getElementById('national_success');
 
 function hideNationalForm() {
     national_form.classList.remove('d-none');
     nationalButton.classList.add('d-none');
+    booking_form.classList.add('d-none');
+    renfe_form.classList.add('d-none');
 }
 
 function cancelNationalForm() {
     national_form.classList.add('d-none');
     nationalButton.classList.remove('d-none');
-    messageSucess.classList.remove('d-none');
 }
 
 
 /* Airport Services */
 let booking_form = document.getElementById('booking_form');
-let display = 0;
 let buttonForm = document.getElementById('button_form');
 
 function hideForm() {
     booking_form.classList.remove('d-none');
     buttonForm.classList.add('d-none');
-    display = 1;
+    national_form.classList.add('d-none');
+    renfe_form.classList.add('d-none');
+    
 }
 
 function cancelForm() {
@@ -38,6 +39,8 @@ let renfeButton = document.getElementById('renfe_button');
 function hideRenfeForm() {
     renfe_form.classList.remove('d-none');
     renfeButton.classList.add('d-none');
+    booking_form.classList.add('d-none');
+    national_form.classList.add('d-none');
 }
 
 function cancelRenfeForm() {
@@ -114,8 +117,45 @@ adult.addEventListener('change', function() {
 });
 
 
-let submitForm = document.getElementById('mailNational_form');
-var mensajeRespuesta = document.getElementById('national_success');
+let adultAiport = document.getElementById('adult_selection_airport');
+let childrenAirport = document.getElementById('child_selection_airport');
+
+adultAiport.addEventListener('change', function() {
+    let adultSelected = adultAiport.value;
+    childrenAirport.innerHTML = '';
+    let option = document.createElement('option');
+    option.text = 'Select Children';
+    childrenAirport.add(option);
+    for(let i = 1; i <= taxi_passengers - adultSelected; i++) {
+        let option = document.createElement('option');
+        option.value = i;
+        option.text = ''+i;
+        childrenAirport.add(option);
+    }
+});
+
+let adultRenfe = document.getElementById('adult_selection_renfe');
+let childrenRenfe = document.getElementById('child_selection_renfe');
+
+adultRenfe.addEventListener('change', function() {
+    let adultSelectedRenfe = adultRenfe.value;
+    childrenRenfe.innerHTML = '';
+    let option = document.createElement('option');
+    option.text = 'Select Children';
+    childrenRenfe.add(option);
+    for(let i = 1; i <= taxi_passengers - adultSelectedRenfe; i++) {
+        let option = document.createElement('option');
+        option.value = i;
+        option.text = ''+i;
+        childrenRenfe.add(option);
+    }
+});
+
+
+/*Enviar Mail National*/
+let submitForm_national = document.getElementById('mailNational_form');
+let mensajeRespuesta_ok = document.getElementById('national_success');
+let mensajeRespuesta_error = document.getElementById('national_error');
 
 function procesarDatosFormStation() {
     let nombre = document.getElementById('nameStation').value;
@@ -142,32 +182,137 @@ function procesarDatosFormStation() {
     formData.append("childStation", child);
     formData.append("paymentStation", payment);
 
-    fetch("mail.php", {
+    fetch("https://www.taxitimetorreviejatoairport.com/mail.php", {
         method: "POST",
         body: formData
     })
     .then(response => response.json())
     .then(data=> {
         if(data.mensaje === 'OK') {
-            mensajeRespuesta.innerHTML = `
-            <div class="alert alert-success" role="alert">
-            Su reserva se ha registrado correctamente!
-            </div>`;
-            mensajeRespuesta.classList.remove('d-none');
+            mensajeRespuesta_ok.classList.remove('d-none');
         } else {
-            mensajeRespuesta.innerHTML = `
-            <div class="alert alert-danger" role="alert">
-            Su Reserva no se ha registrado correctamente!
-            </div>`;
-            mensajeRespuesta.classList.remove('d-none');
+            mensajeRespuesta_error.classList.remove('d-none');
         }
+        national_form.classList.add('d-none');
+        nationalButton.classList.remove('d-none');
     });
 
 }
 
-submitForm.addEventListener('submit', function(event) {
+submitForm_national.addEventListener('submit', function(event) {
     event.preventDefault();
 
     procesarDatosFormStation();
+
+})
+
+/*Enviar Mail Airport*/
+
+let submitForm_airport = document.getElementById('airport_form');
+let airport_mensaje_ok = document.getElementById('airport_success');
+let airport_mensaje_error = document.getElementById('airport_error');
+
+function procesarDatosFormAirport() {
+    let nombre = document.getElementById('nameAirport').value;
+    let phone = document.getElementById('numberAirport').value;
+    let email = document.getElementById('emailAirport').value;
+    let flight = document.getElementById('flightAirport').value;
+    let origin = document.getElementById('origin-select').value;
+    let drop = document.getElementById('drop-select').value;
+    let date = document.getElementById('dateAirport').value;
+    let time = document.getElementById('timeAirport').value;
+    let adults = document.getElementById('adult_selection_airport').value;
+    let child = document.getElementById('child_selection_airport').value;
+    let payment = document.getElementById('paymentAirport').value;
+
+
+    var formData = new FormData();
+    formData.append("name", nombre);
+    formData.append("number", phone);
+    formData.append("email", email);
+    formData.append("flight", flight);
+    formData.append("origin", origin);
+    formData.append("drop", drop);
+    formData.append("Date", date);
+    formData.append("Time", time);
+    formData.append("adult", adults);
+    formData.append("child", child);
+    formData.append("payment", payment);
+
+    fetch("https://www.taxitimetorreviejatoairport.com/mail.php", {
+        method: "POST",
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data=> {
+        if(data.mensaje === 'OK') {
+            airport_mensaje_ok.classList.remove('d-none');
+        } else {
+            airport_mensaje_error.classList.remove('d-none');
+        }
+        booking_form.classList.add('d-none');
+        buttonForm.classList.remove('d-none');
+    });
+
+}
+
+submitForm_airport.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    procesarDatosFormAirport();
+
+})
+
+/*Enviar Mail Renfe*/
+let submitForm_renfe = document.getElementById('renfe_form_data');
+let renfe_mensaje_ok = document.getElementById('renfe_success');
+let renfe_mensaje_error = document.getElementById('renfe_error');
+
+function procesarDatosFormRenfe() {
+    let nombre = document.getElementById('nameRenfe').value;
+    let phone = document.getElementById('numberRenfe').value;
+    let email = document.getElementById('emailRenfe').value;
+    let origin = document.getElementById('origin-station').value;
+    let drop = document.getElementById('drop-station').value;
+    let date = document.getElementById('dateRenfe').value;
+    let time = document.getElementById('timeRenfe').value;
+    let adults = document.getElementById('adult_selection_renfe').value;
+    let child = document.getElementById('child_selection_renfe').value;
+    let payment = document.getElementById('paymentRenfe').value;
+
+
+    var formData = new FormData();
+    formData.append("name", nombre);
+    formData.append("number", phone);
+    formData.append("email", email);
+    formData.append("origin", origin);
+    formData.append("drop", drop);
+    formData.append("Date", date);
+    formData.append("Time", time);
+    formData.append("adult", adults);
+    formData.append("child", child);
+    formData.append("payment", payment);
+
+    fetch("https://www.taxitimetorreviejatoairport.com/mail.php", {
+        method: "POST",
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data=> {
+        if(data.mensaje === 'OK') {
+            renfe_mensaje_ok.classList.remove('d-none');
+        } else {
+            renfe_mensaje_error.classList.remove('d-none');
+        }
+        renfe_form.classList.add('d-none');
+        renfeButton.classList.remove('d-none');
+    });
+
+}
+
+submitForm_renfe.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    procesarDatosFormRenfe();
 
 })

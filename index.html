@@ -199,7 +199,11 @@
             <button onclick="hideNationalForm()" id="national_button">
               Book Now!
             </button>
-            <div class="d-none" id="national_success">
+            <div class="d-none alert alert-success" role="alert" id="national_success">
+              Your reservation has been successfully registered!
+            </div>
+            <div class="d-none alert alert-danger" role="alert" id="national_error">
+              The reservation could not be completed!
             </div>
             <div id="national_form" class="d-none book_form">
               <h4>Make your reservation</h4>
@@ -288,7 +292,7 @@
                           <i class="fa fa-users" aria-hidden="true"></i>
                         </div>
                       </div>
-                      <select id="adult_selection" class="form-control" name="adultStation">
+                      <select id="adult_selection" class="form-control data-adult-selection" name="adultStation">
                         <option selected>Select adults</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -307,7 +311,7 @@
                           <i class="fa fa-child" aria-hidden="true"></i>
                         </div>
                       </div>
-                      <select id="child_selection" name="childStation" class="form-control">
+                      <select id="child_selection" name="childStation" class="form-control data-child-selection">
                         <option selected>Select Children</option>
                       </select>
                     </div>
@@ -371,9 +375,15 @@
             <button onclick="hideForm()" id="button_form">
               Book Now!
             </button>
+            <div class="d-none alert alert-success" role="alert" id="airport_success">
+              Your reservation has been successfully registered!
+            </div>
+            <div class="d-none alert alert-danger" role="alert" id="airport_error">
+              The reservation could not be completed!
+            </div>
             <div id="booking_form" class="d-none book_form">
               <h4>Make your reservation</h4>
-              <form>
+              <form id="airport_form">
                 <div class="form-row">
                   <div class="form-group col-12 col-lg-6">
                     <div class="input-group ">
@@ -382,7 +392,7 @@
                           <i class="fa fa-user" aria-hidden="true"></i>
                         </div>
                       </div>
-                      <input type="text" class="form-control" id="inputDestination" placeholder="Name & surname">
+                      <input type="text" class="form-control" id="nameAirport" placeholder="Name & surname">
                     </div>
                   </div>
                   <div class="form-group col-12 col-lg-6">
@@ -392,7 +402,7 @@
                           <i class="fa fa-phone" aria-hidden="true"></i>
                         </div>
                       </div>
-                      <input type="number" class="form-control" id="inputDestination" placeholder="Phone Number">
+                      <input type="number" class="form-control" id="numberAirport" placeholder="Phone Number">
                     </div>
                   </div>
                   <div class="form-group col-12 col-lg-8">
@@ -402,7 +412,7 @@
                           <i class="fa fa-envelope" aria-hidden="true"></i>
                         </div>
                       </div>
-                      <input type="text" class="form-control" id="inputDestination" placeholder="Email">
+                      <input type="text" class="form-control" id="emailAirport" placeholder="Email">
                     </div>
                   </div>
                   <div class="form-group col-12 col-lg-4">
@@ -412,7 +422,7 @@
                           <i class="fa fa-plane" aria-hidden="true"></i>
                         </div>
                       </div>
-                      <input type="text" class="form-control" id="inputDestination" placeholder="Nº Flight">
+                      <input type="text" class="form-control" id="flightAirport" placeholder="Nº Flight">
                     </div>
                   </div>
                 </div>
@@ -458,7 +468,7 @@
                           <i class="fa fa-calendar" aria-hidden="true"></i>
                         </div>
                       </div>
-                        <input type="Date" name="Date" class="form-control" min="2023-10-01" data-constraints="@NotEmpty @Required @Date">
+                        <input type="Date" name="Date" id="dateAirport" class="form-control" min="2023-10-01" data-constraints="@NotEmpty @Required @Date">
                     </div>
                   </div>
                   <div class="form-group col-12 col-lg-6">
@@ -468,7 +478,7 @@
                           <i class="fa fa-hourglass-start" aria-hidden="true"></i>
                         </div>
                       </div>
-                      <input type="Time" name="Time" class="form-control" data-constraints="@NotEmpty @Required @Date">
+                      <input type="Time" name="Time" id="timeAirport" class="form-control" data-constraints="@NotEmpty @Required @Date">
                     </div>
                   </div>
                 </div>
@@ -480,7 +490,7 @@
                           <i class="fa fa-users" aria-hidden="true"></i>
                         </div>
                       </div>
-                      <select id="adult_selection" class="form-control" aria-label=".form-select-sm example">
+                      <select id="adult_selection_airport" class="form-control data-adult-selection" aria-label=".form-select-sm example">
                         <option selected>Select adults</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -499,7 +509,7 @@
                           <i class="fa fa-child" aria-hidden="true"></i>
                         </div>
                       </div>
-                      <select id="child_selection" class="form-control" aria-label=".form-select-sm example">
+                      <select id="child_selection_airport" class="form-control data-child-selection" aria-label=".form-select-sm example">
                         <option selected>Select Children</option>
                       </select>
                     </div>
@@ -513,7 +523,7 @@
                           <i class="fa fa-credit-card" aria-hidden="true"></i>
                         </div>
                       </div>
-                      <select id="adult_selection" class="form-control" aria-label=".form-select-sm example">
+                      <select id="paymentAirport" class="form-control" aria-label=".form-select-sm example">
                         <option selected>Payment method</option>
                         <option value="1">cash</option>
                         <option value="2">Debit Card</option>
@@ -563,9 +573,15 @@
             <button onclick="hideRenfeForm()" id="renfe_button">
               Book Now!
             </button>
+            <div class="d-none alert alert-success" role="alert" id="renfe_success">
+              Your reservation has been successfully registered!
+            </div>
+            <div class="d-none alert alert-danger" role="alert" id="renfe_error">
+              The reservation could not be completed!
+            </div>
             <div id="renfe_form" class="d-none book_form">
               <h4>Make your reservation</h4>
-              <form>
+              <form id="renfe_form_data">
                 <div class="form-row">
                   <div class="form-group col-12 col-lg-6">
                     <div class="input-group ">
@@ -574,7 +590,7 @@
                           <i class="fa fa-user" aria-hidden="true"></i>
                         </div>
                       </div>
-                      <input type="text" class="form-control" id="inputDestination" placeholder="Name & surname">
+                      <input type="text" class="form-control" id="nameRenfe" placeholder="Name & surname">
                     </div>
                   </div>
                   <div class="form-group col-12 col-lg-6">
@@ -584,7 +600,7 @@
                           <i class="fa fa-phone" aria-hidden="true"></i>
                         </div>
                       </div>
-                      <input type="number" class="form-control" id="inputDestination" placeholder="Phone Number">
+                      <input type="number" class="form-control" id="numberRenfe" placeholder="Phone Number">
                     </div>
                   </div>
                   <div class="form-group col-12 col-lg-8">
@@ -594,17 +610,7 @@
                           <i class="fa fa-envelope" aria-hidden="true"></i>
                         </div>
                       </div>
-                      <input type="text" class="form-control" id="inputDestination" placeholder="Email">
-                    </div>
-                  </div>
-                  <div class="form-group col-12 col-lg-4">
-                    <div class="input-group ">
-                      <div class="input-group-prepend">
-                        <div class="input-group-text">
-                          <i class="fa fa-plane" aria-hidden="true"></i>
-                        </div>
-                      </div>
-                      <input type="text" class="form-control" id="inputDestination" placeholder="Nº Flight">
+                      <input type="text" class="form-control" id="emailRenfe" placeholder="Email">
                     </div>
                   </div>
                 </div>
@@ -650,7 +656,7 @@
                           <i class="fa fa-calendar" aria-hidden="true"></i>
                         </div>
                       </div>
-                        <input type="Date" name="Date" class="form-control" min="2023-10-01" data-constraints="@NotEmpty @Required @Date">
+                        <input type="Date" name="Date" id="dateRenfe" class="form-control" min="2023-10-01" data-constraints="@NotEmpty @Required @Date">
                     </div>
                   </div>
                   <div class="form-group col-12 col-lg-6">
@@ -660,7 +666,7 @@
                           <i class="fa fa-hourglass-start" aria-hidden="true"></i>
                         </div>
                       </div>
-                      <input type="Time" name="Time" class="form-control" data-constraints="@NotEmpty @Required @Date">
+                      <input type="Time" name="Time" id="timeRenfe" class="form-control" data-constraints="@NotEmpty @Required @Date">
                     </div>
                   </div>
                 </div>
@@ -672,7 +678,7 @@
                           <i class="fa fa-users" aria-hidden="true"></i>
                         </div>
                       </div>
-                      <select id="adult_selection" class="form-control" aria-label=".form-select-sm example">
+                      <select id="adult_selection_renfe" class="form-control" aria-label=".form-select-sm example">
                         <option selected>Select adults</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -691,7 +697,7 @@
                           <i class="fa fa-child" aria-hidden="true"></i>
                         </div>
                       </div>
-                      <select id="child_selection" class="form-control" aria-label=".form-select-sm example">
+                      <select id="child_selection_renfe" class="form-control" aria-label=".form-select-sm example">
                         <option selected>Select Children</option>
                       </select>
                     </div>
@@ -705,7 +711,7 @@
                           <i class="fa fa-credit-card" aria-hidden="true"></i>
                         </div>
                       </div>
-                      <select id="adult_selection" class="form-control" aria-label=".form-select-sm example">
+                      <select id="paymentRenfe" class="form-control" aria-label=".form-select-sm example">
                         <option selected>Payment method</option>
                         <option value="1">cash</option>
                         <option value="2">Debit Card</option>
