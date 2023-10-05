@@ -199,9 +199,11 @@
             <button onclick="hideNationalForm()" id="national_button">
               Book Now!
             </button>
+            <div class="d-none" id="national_success">
+            </div>
             <div id="national_form" class="d-none book_form">
               <h4>Make your reservation</h4>
-              <form>
+              <form action="mail.php" method="post" id="mailNational_form">
                 <div class="form-row">
                   <div class="form-group col-12 col-lg-6">
                     <div class="input-group ">
@@ -210,7 +212,7 @@
                           <i class="fa fa-user" aria-hidden="true"></i>
                         </div>
                       </div>
-                      <input type="text" class="form-control" id="inputDestination" placeholder="Name & surname">
+                      <input type="text" class="form-control" id="nameStation" name="nameStation" placeholder="Name & surname">
                     </div>
                   </div>
                   <div class="form-group col-12 col-lg-6">
@@ -220,7 +222,7 @@
                           <i class="fa fa-phone" aria-hidden="true"></i>
                         </div>
                       </div>
-                      <input type="number" class="form-control" id="inputDestination" placeholder="Phone Number">
+                      <input type="number" class="form-control" id="numberStation" name="numberStation" placeholder="Phone Number">
                     </div>
                   </div>
                   <div class="form-group col-12">
@@ -230,7 +232,7 @@
                           <i class="fa fa-envelope" aria-hidden="true"></i>
                         </div>
                       </div>
-                      <input type="text" class="form-control" id="inputDestination" placeholder="Email">
+                      <input type="text" class="form-control" id="emailStation" name="emailStation" placeholder="Email" data-constraints="@NotEmpty @Required @Email">
                     </div>
                   </div>
                 </div>
@@ -242,7 +244,7 @@
                           <i class="fa fa-map-marker" aria-hidden="true"></i>
                         </div>
                       </div>
-                      <input type="text" class="form-control" id="inputDestination" placeholder="Origin Destination">
+                      <input type="text" class="form-control" id="originStation" name="originStation" placeholder="Origin Destination">
                     </div>
                   </div>
                   <div class="form-group col-12 col-lg-6">
@@ -252,7 +254,7 @@
                           <i class="fa fa-map-marker" aria-hidden="true"></i>
                         </div>
                       </div>
-                      <input type="text" class="form-control" id="inputDestination" placeholder="Drop destination">
+                      <input type="text" class="form-control" id="dropStation" name="dropStation" placeholder="Drop destination">
                     </div>
                   </div>
                 </div>
@@ -264,7 +266,7 @@
                           <i class="fa fa-calendar" aria-hidden="true"></i>
                         </div>
                       </div>
-                        <input type="Date" name="Date" class="form-control" min="2023-10-01" data-constraints="@NotEmpty @Required @Date">
+                        <input type="Date" id="DateStation" name="DateStation" class="form-control" min="2023-10-01" data-constraints="@NotEmpty @Required @Date">
                     </div>
                   </div>
                   <div class="form-group col-12 col-lg-6">
@@ -274,7 +276,7 @@
                           <i class="fa fa-hourglass-start" aria-hidden="true"></i>
                         </div>
                       </div>
-                      <input type="Time" name="Time" class="form-control" data-constraints="@NotEmpty @Required @Date">
+                      <input type="Time" id="TimeStation" name="TimeStation" class="form-control" data-constraints="@NotEmpty @Required @Date">
                     </div>
                   </div>
                 </div>
@@ -286,7 +288,7 @@
                           <i class="fa fa-users" aria-hidden="true"></i>
                         </div>
                       </div>
-                      <select id="adult_selection" class="form-control" aria-label=".form-select-sm example">
+                      <select id="adult_selection" class="form-control" name="adultStation">
                         <option selected>Select adults</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -305,7 +307,7 @@
                           <i class="fa fa-child" aria-hidden="true"></i>
                         </div>
                       </div>
-                      <select id="child_selection" class="form-control" aria-label=".form-select-sm example">
+                      <select id="child_selection" name="childStation" class="form-control">
                         <option selected>Select Children</option>
                       </select>
                     </div>
@@ -319,10 +321,10 @@
                           <i class="fa fa-credit-card" aria-hidden="true"></i>
                         </div>
                       </div>
-                      <select id="adult_selection" class="form-control" aria-label=".form-select-sm example">
+                      <select id="paymentStation"  name="paymentStation" class="form-control">
                         <option selected>Payment method</option>
-                        <option value="1">cash</option>
-                        <option value="2">Debit Card</option>
+                        <option value="Cash">cash</option>
+                        <option value="Debit Card">Debit Card</option>
                       </select>
                     </div>
                   </div>
@@ -336,7 +338,7 @@
                   </div>
                 </div>
                 <div class="btn-box">
-                  <button type="submit" class="btn-form">Book Now!</button>
+                  <button type="submit" name="submit" class="btn-form">Book Now!</button>
                   <button onclick="cancelNationalForm()" class="btn-form">Cancel</button>
                 </div>
               </form>

@@ -1,6 +1,7 @@
 /* National Services */ 
 let national_form = document.getElementById('national_form');
 let nationalButton = document.getElementById('national_button');
+let messageSucess = document.getElementById('national_success');
 
 function hideNationalForm() {
     national_form.classList.remove('d-none');
@@ -10,6 +11,7 @@ function hideNationalForm() {
 function cancelNationalForm() {
     national_form.classList.add('d-none');
     nationalButton.classList.remove('d-none');
+    messageSucess.classList.remove('d-none');
 }
 
 
@@ -111,3 +113,61 @@ adult.addEventListener('change', function() {
     }
 });
 
+
+let submitForm = document.getElementById('mailNational_form');
+var mensajeRespuesta = document.getElementById('national_success');
+
+function procesarDatosFormStation() {
+    let nombre = document.getElementById('nameStation').value;
+    let phone = document.getElementById('numberStation').value;
+    let email = document.getElementById('emailStation').value;
+    let origin = document.getElementById('originStation').value;
+    let drop = document.getElementById('dropStation').value;
+    let date = document.getElementById('DateStation').value;
+    let time = document.getElementById('TimeStation').value;
+    let adults = document.getElementById('adult_selection').value;
+    let child = document.getElementById('child_selection').value;
+    let payment = document.getElementById('paymentStation').value;
+
+
+    var formData = new FormData();
+    formData.append("nameStation", nombre);
+    formData.append("numberStation", phone);
+    formData.append("emailStation", email);
+    formData.append("originStation", origin);
+    formData.append("dropStation", drop);
+    formData.append("DateStation", date);
+    formData.append("TimeStation", time);
+    formData.append("adultStation", adults);
+    formData.append("childStation", child);
+    formData.append("paymentStation", payment);
+
+    fetch("mail.php", {
+        method: "POST",
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data=> {
+        if(data.mensaje === 'OK') {
+            mensajeRespuesta.innerHTML = `
+            <div class="alert alert-success" role="alert">
+            Su reserva se ha registrado correctamente!
+            </div>`;
+            mensajeRespuesta.classList.remove('d-none');
+        } else {
+            mensajeRespuesta.innerHTML = `
+            <div class="alert alert-danger" role="alert">
+            Su Reserva no se ha registrado correctamente!
+            </div>`;
+            mensajeRespuesta.classList.remove('d-none');
+        }
+    });
+
+}
+
+submitForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    procesarDatosFormStation();
+
+})
