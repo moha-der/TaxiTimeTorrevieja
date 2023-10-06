@@ -1,3 +1,25 @@
+/* Constantes para lenguajes */
+const language = document.documentElement.lang;
+const email_es = "Por favor, introduce una dirección de correo electrónico válida.";
+const email_en = "Please enter a valid email address.";
+const email_fr = "Veuillez entrer une adresse e-mail valide.";
+const email_de = "Bitte geben Sie eine gültige E-Mail-Adresse ein."
+const email_no = "Vennligst skriv inn en gyldig e-postadresse.";
+const email_sw = "Vänligen ange en giltig e-postadress.";
+const date_es = "Introduce una fecha mayor que la actual";
+const date_en = "Please enter a date greater than the current one.";
+const date_fr = "Veuillez entrer une date ultérieure à la date actuelle.";
+const date_de = "Bitte geben Sie ein Datum ein, das größer ist als das aktuelle Datum.";
+const date_no = "Vennligst skriv inn en dato som er senere enn dagens dato.";
+const date_sw = "Ange ett datum som är senare än dagens datum.";
+
+
+/* Constantes para email */
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+let fechaActual = new Date(); 
+fechaActual = fechaActual.toISOString().split('T')[0];
+
+
 /* National Services */ 
 let national_form = document.getElementById('national_form');
 let nationalButton = document.getElementById('national_button');
@@ -168,7 +190,42 @@ function procesarDatosFormStation() {
     let adults = document.getElementById('adult_selection').value;
     let child = document.getElementById('child_selection').value;
     let payment = document.getElementById('paymentStation').value;
+    
 
+
+    if (!emailRegex.test(email)) {
+        if(language === 'en') {
+            alert(email_en);
+        } else if (language === 'es') {
+            alert(email_es);
+        } else if (language === 'fr') {
+            alert(email_fr);
+        } else if (language === 'de') {
+            alert(email_de);
+        } else if (language === 'no') {
+            alert(email_no);
+        } else if (language === 'sw') {
+            alert(email_sw);
+        }
+        return; // Evita que el formulario se envíe si la validación falla
+    }
+
+    if (date < fechaActual) {
+        if(language === 'en') {
+            alert(date_en);
+        } else if (language === 'es') {
+            alert(date_es);
+        } else if (language === 'fr') {
+            alert(date_fr);
+        } else if (language === 'de') {
+            alert(date_de);
+        } else if (language === 'no') {
+            alert(date_no);
+        } else if (language === 'sw') {
+            alert(date_sw);
+        }
+        return;
+    }
 
     var formData = new FormData();
     formData.append("nameStation", nombre);
@@ -225,6 +282,39 @@ function procesarDatosFormAirport() {
     let child = document.getElementById('child_selection_airport').value;
     let payment = document.getElementById('paymentAirport').value;
 
+    if (!emailRegex.test(email)) {
+        if(language === 'en') {
+            alert(email_en);
+        } else if (language === 'es') {
+            alert(email_es);
+        } else if (language === 'fr') {
+            alert(email_fr);
+        } else if (language === 'de') {
+            alert(email_de);
+        } else if (language === 'no') {
+            alert(email_no);
+        } else if (language === 'sw') {
+            alert(email_sw);
+        }
+        return; // Evita que el formulario se envíe si la validación falla
+    }
+
+    if (date < fechaActual) {
+        if(language === 'en') {
+            alert(date_en);
+        } else if (language === 'es') {
+            alert(date_es);
+        } else if (language === 'fr') {
+            alert(date_fr);
+        } else if (language === 'de') {
+            alert(date_de);
+        } else if (language === 'no') {
+            alert(date_no);
+        } else if (language === 'sw') {
+            alert(date_sw);
+        }
+        return;
+    }
 
     var formData = new FormData();
     formData.append("name", nombre);
@@ -280,6 +370,39 @@ function procesarDatosFormRenfe() {
     let child = document.getElementById('child_selection_renfe').value;
     let payment = document.getElementById('paymentRenfe').value;
 
+    if (!emailRegex.test(email)) {
+        if(language === 'en') {
+            alert(email_en);
+        } else if (language === 'es') {
+            alert(email_es);
+        } else if (language === 'fr') {
+            alert(email_fr);
+        } else if (language === 'de') {
+            alert(email_de);
+        } else if (language === 'no') {
+            alert(email_no);
+        } else if (language === 'sw') {
+            alert(email_sw);
+        }
+        return; // Evita que el formulario se envíe si la validación falla
+    }
+
+    if (date < fechaActual) {
+        if(language === 'en') {
+            alert(date_en);
+        } else if (language === 'es') {
+            alert(date_es);
+        } else if (language === 'fr') {
+            alert(date_fr);
+        } else if (language === 'de') {
+            alert(date_de);
+        } else if (language === 'no') {
+            alert(date_no);
+        } else if (language === 'sw') {
+            alert(date_sw);
+        }
+        return;
+    }
 
     var formData = new FormData();
     formData.append("name", nombre);
