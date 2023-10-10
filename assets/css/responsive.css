@@ -57,6 +57,14 @@
 
 @media (max-width: 768px) {
 
+  .description-service {
+    font-size: 14px !important;
+  }
+
+  .service-list h6{
+    font-size: 14px !important;
+  }
+
   .about_section .detail-box {
     padding: 0;
     margin-bottom: 45px;
@@ -70,13 +78,6 @@
     padding: 45px 0;
   }
 
-  .service_section .service_container .box:nth-child(2) {
-    margin: 45px 0;
-  }
-
-  .service_section .service_container {
-    flex-direction: column;
-  }
 
   .contact_section .img-box {
     padding-left: 25px;
@@ -101,7 +102,14 @@
   }
 }
 
-@media (max-width: 480px) {}
+@media (max-width: 480px) {
+  .service_section .service-list h6{
+    font-size: 14px;
+  }
+  .service_section .description-service{
+    font-size: 14px
+  }
+}
 
 @media (max-width: 420px) {
   .why_section .box {
@@ -121,6 +129,12 @@
     flex-direction: column;
     align-items: center;
   }
+  .service_section .service-list h6{
+    font-size: 14px;
+  }
+  .service_section .description-service{
+    font-size: 14px
+  }
 }
 
 @media (min-width: 1200px) {
@@ -129,9 +143,23 @@
   }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 990px) {
+  .container {
+    max-width: 1170px;
+  }
+  .service_section .box{
+    max-width: 49% !important;
+    margin: 10px 4px;
+  }
+}
+
+@media (min-width: 1080px) {
     .container {
       max-width: 1170px;
+    }
+    .service_section .box{
+      max-width: 48% !important;
+      margin: 10px 10px;
     }
 }
 
@@ -139,7 +167,7 @@
   .airport-list h6 {
     font-size: 10px;
   }
-  .service_container .box {
+  .service_section .box {
     margin-right: 10px;
   }
   .service-list {
@@ -147,8 +175,27 @@
   }
 }
 
+@media screen and (min-width: 768px){
+  .service-list {
+    align-items: center;
+  }
+}
+
 @media screen and (min-width: 768px) and (max-width: 1180px){
 .container {
   max-width: 100%;
 }
+
+.service-list h6 {
+  font-size: 1rem;
 }
+
+.description-service {
+  width: 100%;
+  height: auto;
+}
+}
+
+
+
+  

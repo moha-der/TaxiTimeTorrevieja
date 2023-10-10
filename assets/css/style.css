@@ -349,29 +349,21 @@ a:focus {
   border: 1px solid #e5e5e5;
 }
 
-.service_section .service_container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  text-align: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
 
-.service_container .box {
+.service_section .box {
   border: 1px solid #f7c621;
   padding-bottom: 10px;
   border-radius: 10px;
+  margin: 10px 0;
 }
 
-.service_container hr {
+.service_section hr {
   border-top: 1px solid #f7c621;
   display: inline-block;
   width: 80%;
 }
 
-.service_section .service_container .box .img-box {
+.service_section .box .img-box {
   height: 85px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -385,20 +377,20 @@ a:focus {
           margin-top: 10px;
 }
 
-.service_section .service_container .box .img-box img {
+.service_section .box .img-box img {
   max-width: 100%;
   max-height: 100%;
 }
 
-.service_section .service_container .box .detail-box {
+.service_section .box .detail-box {
   margin-top: 15px;
 }
 
-.service_section .service_container .box .detail-box h5 {
+.service_section .box .detail-box h5 {
   font-weight: bold;
 }
 
-.service_section .service_container .box .detail-box button {
+.service_section .box .detail-box button {
   display: inline-block;
   padding: 7px 20px;
   border: 1px solid #0b0b0a;
@@ -406,7 +398,7 @@ a:focus {
   color: #0b0b0a;
 }
 
-.service_section .service_container .box .detail-box button:hover {
+.service_section .box .detail-box button:hover {
   background-color: #0b0b0a;
   color: #ffffff;
 }
@@ -794,5 +786,10 @@ a:focus {
 
 .btn-book i {
   padding-right: 5px;
+}
+
+.description-service {
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
