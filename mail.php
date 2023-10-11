@@ -28,6 +28,10 @@ if (strpos($origin, $allowed_origin) === 0) {
         $child = $_POST["child"];
         $payment = $_POST["payment"];
         $subject = "Booking dates";
+        $baby = $_POST["baby"];
+        $infants = $_POST["infants"];
+        $surname = $_POST["surname"];
+        $disabled = $_POST["disabled"];
 
         $message = '
         <html>
@@ -35,7 +39,7 @@ if (strpos($origin, $allowed_origin) === 0) {
         <title>Datos de la reserva</title>
         <style>
                 table {
-                    width: 50%;
+                    width: 80%;
                     border: 1px solid #ccc;
                     border-collapse: collapse;
                     }
@@ -58,6 +62,7 @@ if (strpos($origin, $allowed_origin) === 0) {
         <h2>Reservation Data</h2>
         <table>
         <tr><td>Name: </td><td>'.$first_name.'</td></tr>
+        <tr><td>Surname: </td><td>'.$surname.'</td></tr>
         <tr><td>Phone Number: </td><td>'.$phone_number.'</td></tr>
         <tr><td>Email: </td><td>'.$email.'</td></tr>
         <tr><td>Flight: </td><td>'.$flight.'</td></tr>
@@ -66,8 +71,11 @@ if (strpos($origin, $allowed_origin) === 0) {
         <tr><td>Date: </td><td>'.$date.'</td></tr>
         <tr><td>Time: </td><td>'.$time.'</td></tr>
         <tr><td>Adults: </td><td>'.$adults.'</td></tr>
-        <tr><td>Childrens: </td><td>'.$child.'</td></tr>
+        <tr><td>Children (3 to 8): </td><td>'.$child.'</td></tr>
+        <tr><td>Baby (0 to 1): </td><td>'.$baby.'</td></tr>
+        <tr><td>Infants (1 to 3): </td><td>'.$infants.'</td></tr>
         <tr><td>Payment Method: </td><td>'.$payment.'</td></tr>
+        <tr><td>Vehicle adapted for disabled: </td><td>'.$disabled.'</td></tr>
         </table>
         </body>
         </html>

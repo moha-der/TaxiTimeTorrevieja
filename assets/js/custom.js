@@ -17,8 +17,22 @@ const date_sw = "Ange ett datum som är senare än dagens datum.";
 /* Constantes para email */
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 let fechaActual = new Date(); 
-fechaActual = fechaActual.toISOString().split('T')[0];
 
+
+
+/* Iniciando app*/ 
+let maxDate = new Date(fechaActual.getFullYear(), fechaActual.getMonth() +2, fechaActual.getUTCDate());
+let maxDateAirport = document.getElementById('dateAirport');
+maxDateAirport.setAttribute('max', maxDate.toISOString().split('T')[0]);
+let maxDateAirport_2 = document.getElementById('dateAirport_2');
+maxDateAirport_2.setAttribute('max', maxDate.toISOString().split('T')[0]);
+let maxDateStation = document.getElementById('DateStation');
+maxDateStation.setAttribute('max', maxDate.toISOString().split('T')[0]);
+let maxDateRenfe = document.getElementById('dateRenfe');
+maxDateRenfe.setAttribute('max', maxDate.toISOString().split('T')[0]);
+
+
+fechaActual = fechaActual.toISOString().split('T')[0];
 
 /* National Services */ 
 let national_form = document.getElementById('national_form');
@@ -54,6 +68,23 @@ function cancelForm() {
     buttonForm.classList.remove('d-none');
 }
 
+/* Airport Services Murcia */
+let booking_form_2 = document.getElementById('booking_form_2');
+let buttonForm_2 = document.getElementById('button_form_2');
+
+function hideForm2() {
+    booking_form_2.classList.remove('d-none');
+    buttonForm_2.classList.add('d-none');
+    national_form.classList.add('d-none');
+    renfe_form.classList.add('d-none');
+    
+}
+
+function cancelForm2() {
+    booking_form_2.classList.add('d-none');
+    buttonForm_2.classList.remove('d-none');
+}
+
 /* Renfe Services */ 
 let renfe_form = document.getElementById('renfe_form');
 let renfeButton = document.getElementById('renfe_button');
@@ -70,30 +101,6 @@ function cancelRenfeForm() {
     renfeButton.classList.remove('d-none');
 }
 
-let originSelect = document.getElementById('origin-select');
-let dropSelect = document.getElementById('drop-select');
-
-originSelect.addEventListener('change', function() {
-    let selectedValue = originSelect.value;
-    dropSelect.innerHTML = '';
-    let option = document.createElement('option');
-    option.text = 'Select drop location';
-    dropSelect.add(option);
-
-    for (let i = 1; i < originSelect.options.length; i++) {
-        let option = document.createElement('option');
-        option.value = originSelect.options[i].value;
-        option.text = originSelect.options[i].text;
-        dropSelect.add(option);
-    }
-
-    for (let i = 0; i < dropSelect.options.length; i++) {
-        if (dropSelect.options[i].value === selectedValue) {
-          dropSelect.remove(i);
-          break;
-        }
-    }
-});
 
 let originStation = document.getElementById('origin-station');
 let dropStation = document.getElementById('drop-station');
@@ -120,59 +127,88 @@ originStation.addEventListener('change', function() {
     }
 });
 
-let adult = document.getElementById('adult_selection');
-let children = document.getElementById('child_selection');
-const taxi_passengers = 7
 
-adult.addEventListener('change', function() {
-    let adultSelected = adult.value;
-    children.innerHTML = '';
-    let option = document.createElement('option');
-    option.text = 'Select Children';
-    children.add(option);
-    for(let i = 1; i <= taxi_passengers - adultSelected; i++) {
-        let option = document.createElement('option');
-        option.value = i;
-        option.text = ''+i;
-        children.add(option);
+/* Seleccion de niños airport 1 */
+let checkbok_ninos_1 = document.getElementById('bebe_selection_1');
+let formNinos = document.getElementById('formNinos');
+checkbok_ninos_1.addEventListener('change', function() {
+    if(checkbok_ninos_1.checked){
+        formNinos.classList.remove('d-none');
+    } else {
+        formNinos.classList.add('d-none');
     }
 });
 
-
-let adultAiport = document.getElementById('adult_selection_airport');
-let childrenAirport = document.getElementById('child_selection_airport');
-
-adultAiport.addEventListener('change', function() {
-    let adultSelected = adultAiport.value;
-    childrenAirport.innerHTML = '';
-    let option = document.createElement('option');
-    option.text = 'Select Children';
-    childrenAirport.add(option);
-    for(let i = 1; i <= taxi_passengers - adultSelected; i++) {
-        let option = document.createElement('option');
-        option.value = i;
-        option.text = ''+i;
-        childrenAirport.add(option);
+/* Seleccion de niños airport 2 */
+let checkbok_ninos_2 = document.getElementById('bebe_selection_2');
+let formNinos_2 = document.getElementById('formNinos_2');
+checkbok_ninos_2.addEventListener('change', function() {
+    if(checkbok_ninos_2.checked){
+        formNinos_2.classList.remove('d-none');
+    } else {
+        formNinos_2.classList.add('d-none');
     }
 });
 
-let adultRenfe = document.getElementById('adult_selection_renfe');
-let childrenRenfe = document.getElementById('child_selection_renfe');
-
-adultRenfe.addEventListener('change', function() {
-    let adultSelectedRenfe = adultRenfe.value;
-    childrenRenfe.innerHTML = '';
-    let option = document.createElement('option');
-    option.text = 'Select Children';
-    childrenRenfe.add(option);
-    for(let i = 1; i <= taxi_passengers - adultSelectedRenfe; i++) {
-        let option = document.createElement('option');
-        option.value = i;
-        option.text = ''+i;
-        childrenRenfe.add(option);
+/* Seleccion de niños national */
+let checkbok_ninos_station = document.getElementById('bebe_selection_station');
+let formNinos_station = document.getElementById('formNinos_station');
+checkbok_ninos_station.addEventListener('change', function() {
+    if(checkbok_ninos_station.checked){
+        formNinos_station.classList.remove('d-none');
+    } else {
+        formNinos_station.classList.add('d-none');
     }
 });
 
+/* Seleccion de niños renfe */
+let checkbok_ninos_renfe = document.getElementById('bebe_selection_renfe');
+let formNinos_renfe = document.getElementById('formNinos_renfe');
+checkbok_ninos_renfe.addEventListener('change', function() {
+    if(checkbok_ninos_renfe.checked){
+        formNinos_renfe.classList.remove('d-none');
+    } else {
+        formNinos_renfe.classList.add('d-none');
+    }
+});
+
+/* Checkbox validation */
+
+let disable_1 = document.getElementById('disable_1');
+disable_1.addEventListener('change', function() {
+    if(disable_1.checked){
+        disable_1.value = 'Si';
+    } else {
+        disable_1.value = 'No';
+    }
+});
+
+let disable_2 = document.getElementById('disable_2');
+disable_2.addEventListener('change', function() {
+    if(disable_2.checked){
+        disable_2.value = 'Si';
+    } else {
+        disable_2.value = 'No';
+    }
+});
+
+let disable_station = document.getElementById('disable_station');
+disable_station.addEventListener('change', function() {
+    if(disable_station.checked){
+        disable_station.value = 'Si';
+    } else {
+        disable_station.value = 'No';
+    }
+});
+
+let disable_renfe = document.getElementById('disable_renfe');
+disable_renfe.addEventListener('change', function() {
+    if(disable_renfe.checked){
+        disable_renfe.value = 'Si';
+    } else {
+        disable_renfe.value = 'No';
+    }
+});
 
 /*Enviar Mail National*/
 let submitForm_national = document.getElementById('mailNational_form');
@@ -188,8 +224,12 @@ function procesarDatosFormStation() {
     let date = document.getElementById('DateStation').value;
     let time = document.getElementById('TimeStation').value;
     let adults = document.getElementById('adult_selection').value;
-    let child = document.getElementById('child_selection').value;
     let payment = document.getElementById('paymentStation').value;
+    let surname = document.getElementById('surnameStation').value;
+    let baby = document.getElementById('babies_selection_station').value;
+    let infants = document.getElementById('infants_selection_station').value;
+    let child = document.getElementById('children_selection_station').value;
+    let disabled = document.getElementById('disable_station').value;
     
 
 
@@ -238,6 +278,10 @@ function procesarDatosFormStation() {
     formData.append("adultStation", adults);
     formData.append("childStation", child);
     formData.append("paymentStation", payment);
+    formData.append("surname", surname);
+    formData.append("baby", baby);
+    formData.append("infants", infants);
+    formData.append("disabled", disabled);
 
     fetch("https://www.taxitimetorreviejatoairport.com/mail.php", {
         method: "POST",
@@ -279,8 +323,12 @@ function procesarDatosFormAirport() {
     let date = document.getElementById('dateAirport').value;
     let time = document.getElementById('timeAirport').value;
     let adults = document.getElementById('adult_selection_airport').value;
-    let child = document.getElementById('child_selection_airport').value;
     let payment = document.getElementById('paymentAirport').value;
+    let surname = document.getElementById('surnameAirport').value;
+    let baby = document.getElementById('babies_selection_1').value;
+    let infants = document.getElementById('infants_selection_1').value;
+    let child = document.getElementById('children_selection_1').value;
+    let disabled = document.getElementById('disable_1').value;
 
     if (!emailRegex.test(email)) {
         if(language === 'en') {
@@ -328,8 +376,14 @@ function procesarDatosFormAirport() {
     formData.append("adult", adults);
     formData.append("child", child);
     formData.append("payment", payment);
+    formData.append("surname", surname);
+    formData.append("baby", baby);
+    formData.append("infants", infants);
+    formData.append("disabled", disabled);
 
-    fetch("https://www.taxitimetorreviejatoairport.com/mail.php", {
+
+
+   fetch("https://www.taxitimetorreviejatoairport.com/mail.php", {
         method: "POST",
         body: formData
     })
@@ -342,6 +396,106 @@ function procesarDatosFormAirport() {
         }
         booking_form.classList.add('d-none');
         buttonForm.classList.remove('d-none');
+    });
+
+}
+
+submitForm_airport.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    procesarDatosFormAirport();
+
+})
+
+
+/* Enviar Mail Airport Murcia */
+let submitForm_airport_2 = document.getElementById('airport_form_2');
+let airport_mensaje_ok_2 = document.getElementById('airport_success_2');
+let airport_mensaje_error_2 = document.getElementById('airport_error_2');
+
+function procesarDatosFormAirport2() {
+    let nombre = document.getElementById('nameAirport_2').value;
+    let phone = document.getElementById('numberAirport_2').value;
+    let email = document.getElementById('emailAirport_2').value;
+    let flight = document.getElementById('flightAirport_2').value;
+    let origin = document.getElementById('origin-select_2').value;
+    let drop = document.getElementById('drop-select_2').value;
+    let date = document.getElementById('dateAirport_2').value;
+    let time = document.getElementById('timeAirport_2').value;
+    let adults = document.getElementById('adult_selection_airport_2').value;
+    let payment = document.getElementById('paymentAirport_2').value;
+    let surname = document.getElementById('surnameAirport_2').value;
+    let baby = document.getElementById('babies_selection_2').value;
+    let infants = document.getElementById('infants_selection_2').value;
+    let child = document.getElementById('children_selection_2').value;
+    let disabled = document.getElementById('disable_2').value;
+
+    if (!emailRegex.test(email)) {
+        if(language === 'en') {
+            alert(email_en);
+        } else if (language === 'es') {
+            alert(email_es);
+        } else if (language === 'fr') {
+            alert(email_fr);
+        } else if (language === 'de') {
+            alert(email_de);
+        } else if (language === 'no') {
+            alert(email_no);
+        } else if (language === 'sw') {
+            alert(email_sw);
+        }
+        return; // Evita que el formulario se envíe si la validación falla
+    }
+
+    if (date < fechaActual) {
+        if(language === 'en') {
+            alert(date_en);
+        } else if (language === 'es') {
+            alert(date_es);
+        } else if (language === 'fr') {
+            alert(date_fr);
+        } else if (language === 'de') {
+            alert(date_de);
+        } else if (language === 'no') {
+            alert(date_no);
+        } else if (language === 'sw') {
+            alert(date_sw);
+        }
+        return;
+    }
+
+    var formData = new FormData();
+    formData.append("name", nombre);
+    formData.append("number", phone);
+    formData.append("email", email);
+    formData.append("flight", flight);
+    formData.append("origin", origin);
+    formData.append("drop", drop);
+    formData.append("Date", date);
+    formData.append("Time", time);
+    formData.append("adult", adults);
+    formData.append("child", child);
+    formData.append("payment", payment);
+    formData.append("surname", surname);
+    formData.append("baby", baby);
+    formData.append("infants", infants);
+    formData.append("disabled", disabled);
+
+
+
+   fetch("https://www.taxitimetorreviejatoairport.com/mail.php", {
+        method: "POST",
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data=> {
+        if(data.mensaje === 'OK') {
+            airport_mensaje_ok_2.classList.remove('d-none');
+        } else {
+            airport_mensaje_error_2.classList.remove('d-none');
+        }
+        booking_form_2.classList.add('d-none');
+        buttonForm_2.classList.remove('d-none');
     });
 
 }
