@@ -230,6 +230,7 @@ function procesarDatosFormStation() {
     let infants = document.getElementById('infants_selection_station').value;
     let child = document.getElementById('children_selection_station').value;
     let disabled = document.getElementById('disable_station').value;
+    let extra = document.getElementById('descripcion_1').value;
     
 
 
@@ -282,6 +283,7 @@ function procesarDatosFormStation() {
     formData.append("baby", baby);
     formData.append("infants", infants);
     formData.append("disabled", disabled);
+    formData.append("extra", extra);
 
     fetch("https://www.taxitimetorreviejatoairport.com/mail.php", {
         method: "POST",
@@ -329,6 +331,8 @@ function procesarDatosFormAirport() {
     let infants = document.getElementById('infants_selection_1').value;
     let child = document.getElementById('children_selection_1').value;
     let disabled = document.getElementById('disable_1').value;
+    let extra = document.getElementById('descripcion_1').value;
+
 
     if (!emailRegex.test(email)) {
         if(language === 'en') {
@@ -380,6 +384,7 @@ function procesarDatosFormAirport() {
     formData.append("baby", baby);
     formData.append("infants", infants);
     formData.append("disabled", disabled);
+    formData.append("extra", extra);
 
 
 
@@ -429,6 +434,8 @@ function procesarDatosFormAirport2() {
     let infants = document.getElementById('infants_selection_2').value;
     let child = document.getElementById('children_selection_2').value;
     let disabled = document.getElementById('disable_2').value;
+    let extra = document.getElementById('descripcion_1').value;
+
 
     if (!emailRegex.test(email)) {
         if(language === 'en') {
@@ -480,6 +487,7 @@ function procesarDatosFormAirport2() {
     formData.append("baby", baby);
     formData.append("infants", infants);
     formData.append("disabled", disabled);
+    formData.append("extra", extra);
 
 
 
@@ -523,6 +531,8 @@ function procesarDatosFormRenfe() {
     let adults = document.getElementById('adult_selection_renfe').value;
     let child = document.getElementById('child_selection_renfe').value;
     let payment = document.getElementById('paymentRenfe').value;
+    let extra = document.getElementById('descripcion_1').value;
+
 
     if (!emailRegex.test(email)) {
         if(language === 'en') {
@@ -569,6 +579,7 @@ function procesarDatosFormRenfe() {
     formData.append("adult", adults);
     formData.append("child", child);
     formData.append("payment", payment);
+    formData.append("extra", extra);
 
     fetch("https://www.taxitimetorreviejatoairport.com/mail.php", {
         method: "POST",

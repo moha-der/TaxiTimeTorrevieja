@@ -32,6 +32,7 @@ if (strpos($origin, $allowed_origin) === 0) {
         $infants = $_POST["infants"];
         $surname = $_POST["surname"];
         $disabled = $_POST["disabled"];
+        $extra = $_POST["extra"];
 
         $message = '
         <html>
@@ -76,6 +77,7 @@ if (strpos($origin, $allowed_origin) === 0) {
         <tr><td>Infants (1 to 3): </td><td>'.$infants.'</td></tr>
         <tr><td>Payment Method: </td><td>'.$payment.'</td></tr>
         <tr><td>Vehicle adapted for disabled: </td><td>'.$disabled.'</td></tr>
+        <tr><td>Extra Description: </td><td>'.$extra.'</td></tr>
         </table>
         </body>
         </html>
