@@ -592,4 +592,11 @@ submitForm_renfe.addEventListener('submit', function(event) {
 
     procesarDatosFormRenfe();
 
-})
+});
+
+function AddOrigin() {
+    console.log('entrando funcion');
+    let origin = document.getElementById('origin-select');
+    origin.value = 'Airport Alicante';
+    
+}

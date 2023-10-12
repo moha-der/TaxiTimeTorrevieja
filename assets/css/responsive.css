@@ -141,6 +141,10 @@
   .container {
     max-width: 1170px;
   }
+
+  .slider_section .box{
+    margin-left: 0px !important;
+  }
 }
 
 @media (min-width: 990px) {

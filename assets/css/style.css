@@ -93,6 +93,12 @@ a:focus {
   margin-right: 10px;
 }
 
+.btn-box p{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #f7c621;
+}
+
 .custom_nav-container {
   z-index: 99999;
   padding: 1px 15px;
@@ -730,8 +736,8 @@ a:focus {
 }
 
 .footer-logo {
-  width: 120px;
-  margin-left: 20px;
+  width: 200px;
+  margin-left: 10px;
   margin-bottom: 10px;
 }
 
