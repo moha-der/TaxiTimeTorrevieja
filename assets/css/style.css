@@ -803,3 +803,13 @@ a:focus {
   margin-top: 20px;
   color: #e27d1e;
 }
+
+.airport-location {
+  border-radius: 10px;
+  font-size: 14px;
+  padding: 5px 10px !important;
+}
+
+.location-background {
+  background-color: #fdd347 !important;
+}

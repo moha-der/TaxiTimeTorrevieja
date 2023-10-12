@@ -594,9 +594,55 @@ submitForm_renfe.addEventListener('submit', function(event) {
 
 });
 
+let buttonAlicanteOrigin = document.getElementById('AlicanteOrigin');
+let buttonAlicanteDrop = document.getElementById('AlicanteDrop');
+
+
 function AddOrigin() {
-    console.log('entrando funcion');
-    let origin = document.getElementById('origin-select');
-    origin.value = 'Airport Alicante';
-    
+    let alicanteOrigin = document.getElementById('origin-select');
+    let AlicanteDrop = document.getElementById('drop-select');
+    alicanteOrigin.value = 'Airport Alicante';
+    alicanteOrigin.readOnly = true;
+    AlicanteDrop.readOnly = false;
+    AlicanteDrop.value = '';
+    buttonAlicanteDrop.classList.remove('location-background');
+    buttonAlicanteOrigin.classList.add('location-background');
+}
+
+function AddDrop() {
+    let alicanteOrigin = document.getElementById('origin-select');
+    let AlicanteDrop = document.getElementById('drop-select');
+    AlicanteDrop.value = 'Alicante Airport';
+    AlicanteDrop.readOnly = true;
+    alicanteOrigin.readOnly = false;
+    alicanteOrigin.value = '';
+    buttonAlicanteOrigin.classList.remove('location-background');
+    buttonAlicanteDrop.classList.add('location-background');
+}
+
+
+let buttonMurciaOrigin = document.getElementById('MurciaOrigin');
+let buttonMurciaDrop = document.getElementById('MurciaDrop');
+
+
+function AddOriginMurcia() {
+    let murciaOrigin = document.getElementById('origin-select_2');
+    let murciaDrop = document.getElementById('drop-select_2');
+    murciaOrigin.value = 'Murcia Airport';
+    murciaOrigin.readOnly = true;
+    murciaDrop.readOnly = false;
+    murciaDrop.value = '';
+    buttonMurciaDrop.classList.remove('location-background');
+    buttonMurciaOrigin.classList.add('location-background');
+}
+
+function AddDropMurcia() {
+    let murciaOrigin = document.getElementById('origin-select_2');
+    let murciaDrop = document.getElementById('drop-select_2');
+    murciaDrop.value = 'Murcia Airport';
+    murciaOrigin.readOnly = false;
+    murciaDrop.readOnly = true;
+    murciaOrigin.value = '';
+    buttonMurciaOrigin.classList.remove('location-background');
+    buttonMurciaDrop.classList.add('location-background');
 }

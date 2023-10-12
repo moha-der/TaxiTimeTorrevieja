@@ -212,8 +212,8 @@
               Torrevieja - Alicante Airport
             </h5>
             <div>
-              <button onclick="AddOrigin()">From Airport</button>
-              <button onclick="AddDrop()">To Airport</button>
+              <button id="AlicanteOrigin" class="airport-location location-background" onclick="AddOrigin()">From Airport</button>
+              <button id="AlicanteDrop" class="airport-location" onclick="AddDrop()">To Airport</button>
             </div>
             <hr>
             <p class="description-service">
@@ -307,7 +307,7 @@
                           <i class="fa fa-map-marker" aria-hidden="true"></i>
                         </div>
                       </div>
-                      <input type="text" class="form-control" id="origin-select" placeholder="Origin" required>
+                      <input type="text" class="form-control" id="origin-select" placeholder="Origin" value="Alicante Airport" readonly required>
                     </div>
                   </div>
                   <div class="form-group col-12 col-lg-6">
@@ -465,7 +465,10 @@
             <h5>
               Torrevieja - Murcia Airport
             </h5>
-            <h6>(To and From)</h6>
+            <div>
+              <button id="MurciaOrigin" class="airport-location location-background" onclick="AddOriginMurcia()">From Airport</button>
+              <button id="MurciaDrop" class="airport-location" onclick="AddDropMurcia()">To Airport</button>
+            </div>
             <hr>
             <p class="description-service">
               Taxi Time Torrevieja takes you from the city of Torrevieja to Murcia Airport, 24 hours a day, 365 days a year, with affordable fixed prices. Enjoy safe travels with punctual and efficient drivers.
@@ -558,7 +561,7 @@
                           <i class="fa fa-map-marker" aria-hidden="true"></i>
                         </div>
                       </div>
-                      <input type="text" class="form-control" id="origin-select_2" placeholder="Origin" required>
+                      <input type="text" class="form-control" id="origin-select_2" placeholder="Origin" value="Murcia Airport" readonly required>
                     </div>
                   </div>
                   <div class="form-group col-12 col-lg-6">
@@ -1422,10 +1425,7 @@
             <div class="contact_nav">
               <a href="">
                 <i class="fa fa-map-marker" aria-hidden="true"></i>
-                <span class="d-block">
-                  Calle Ramón Gallud, 16 Bajo </span>
-                <span class="d-block">Torrevieja, Alicante
-                </span>
+                <span>Calle Ramón Gallud, 16 Bajo, Torrevieja, Alicante</span>
               </a>
               <a href="">
                 <i class="fa fa-phone" aria-hidden="true"></i>
