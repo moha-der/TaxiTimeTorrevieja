@@ -618,6 +618,8 @@ function AddOrigin() {
     AlicanteDrop.value = '';
     buttonAlicanteDrop.classList.remove('location-background');
     buttonAlicanteOrigin.classList.add('location-background');
+    hideForm();
+    cancelForm2();
 }
 
 function AddDrop() {
@@ -629,6 +631,8 @@ function AddDrop() {
     alicanteOrigin.value = '';
     buttonAlicanteOrigin.classList.remove('location-background');
     buttonAlicanteDrop.classList.add('location-background');
+    hideForm();
+    cancelForm2();
 }
 
 
@@ -645,6 +649,8 @@ function AddOriginMurcia() {
     murciaDrop.value = '';
     buttonMurciaDrop.classList.remove('location-background');
     buttonMurciaOrigin.classList.add('location-background');
+    hideForm2();
+    cancelForm();
 }
 
 function AddDropMurcia() {
@@ -656,4 +662,6 @@ function AddDropMurcia() {
     murciaOrigin.value = '';
     buttonMurciaOrigin.classList.remove('location-background');
     buttonMurciaDrop.classList.add('location-background');
+    hideForm2();
+    cancelForm();
 }

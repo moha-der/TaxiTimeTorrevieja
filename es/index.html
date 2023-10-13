@@ -55,15 +55,15 @@
           <img src="../assets/images/logo/logos.png" title="Taxi Services TaxiTimeTorrevieja" alt="Taxi Services TaxiTimeTorrevieja">
         </a>
         <div class="dropdown d-lg-none text-white language-dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink78" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="flag-icon flag-icon-es bandera"></span></a>
+          <a class="nav-link dropdown-toggle" href="index.html" id="navbarDropdownMenuLink78" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="flag-icon flag-icon-es bandera"></span></a>
           <div class="dropdown-menu dropdown-lang-area" aria-labelledby="navbarDropdownMenuLink78"> 
               <a class="dropdown-item" href="../index.html"><span class="flag-icon flag-icon-gb bandera"></span></a> 
-              <a class="dropdown-item" href="no/index.html"><span class="flag-icon flag-icon-no bandera"></span></a> 
-              <a class="dropdown-item" href="sw/index.html"><span class="flag-icon flag-icon-se bandera"></span></a> 
-              <a class="dropdown-item" href="fr/index.html"><span class="flag-icon flag-icon-fr bandera"></span></a>
-              <a class="dropdown-item" href="de/index.html"><span class="flag-icon flag-icon-de bandera"></span></a>
-              <a class="dropdown-item" href="de/index.html"><span class="flag-icon flag-icon-ru bandera"></span></a>
-              <a class="dropdown-item" href="de/index.html"><span class="flag-icon flag-icon-be bandera"></span></a>
+              <a class="dropdown-item" href="../no/index.html"><span class="flag-icon flag-icon-no bandera"></span></a> 
+              <a class="dropdown-item" href="../sw/index.html"><span class="flag-icon flag-icon-se bandera"></span></a> 
+              <a class="dropdown-item" href="../fr/index.html"><span class="flag-icon flag-icon-fr bandera"></span></a>
+              <a class="dropdown-item" href="../de/index.html"><span class="flag-icon flag-icon-de bandera"></span></a>
+              <a class="dropdown-item" href="../ru/index.html"><span class="flag-icon flag-icon-ru bandera"></span></a>
+              <a class="dropdown-item" href="../be/index.html"><span class="flag-icon flag-icon-be bandera"></span></a>
             </div>
       </div> 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -88,15 +88,15 @@
             </li>
           </ul>
           <div class="d-lg-block d-none dropdown text-white">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink78" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="flag-icon flag-icon-es bandera"></span></a>
+            <a class="nav-link dropdown-toggle" href="index.html" id="navbarDropdownMenuLink78" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="flag-icon flag-icon-es bandera"></span></a>
           <div class="dropdown-menu dropdown-lang-area" aria-labelledby="navbarDropdownMenuLink78"> 
               <a class="dropdown-item" href="../index.html"><span class="flag-icon flag-icon-gb bandera"></span></a> 
-              <a class="dropdown-item" href="no/index.html"><span class="flag-icon flag-icon-no bandera"></span></a> 
-              <a class="dropdown-item" href="sw/index.html"><span class="flag-icon flag-icon-se bandera"></span></a> 
-              <a class="dropdown-item" href="fr/index.html"><span class="flag-icon flag-icon-fr bandera"></span></a>
-              <a class="dropdown-item" href="de/index.html"><span class="flag-icon flag-icon-de bandera"></span></a>
-              <a class="dropdown-item" href="ru/index.html"><span class="flag-icon flag-icon-ru bandera"></span></a>
-              <a class="dropdown-item" href="be/index.html"><span class="flag-icon flag-icon-be bandera"></span></a>
+              <a class="dropdown-item" href="../no/index.html"><span class="flag-icon flag-icon-no bandera"></span></a> 
+              <a class="dropdown-item" href="../sw/index.html"><span class="flag-icon flag-icon-se bandera"></span></a> 
+              <a class="dropdown-item" href="../fr/index.html"><span class="flag-icon flag-icon-fr bandera"></span></a>
+              <a class="dropdown-item" href="../de/index.html"><span class="flag-icon flag-icon-de bandera"></span></a>
+              <a class="dropdown-item" href="../ru/index.html"><span class="flag-icon flag-icon-ru bandera"></span></a>
+              <a class="dropdown-item" href="../be/index.html"><span class="flag-icon flag-icon-be bandera"></span></a>
             </div>
           </div>
         </div>
@@ -383,7 +383,7 @@
                 <div class="form-row">
                   <div class="form-group col-12">
                     <div class="">
-                      <textarea id="descripcion_1" name="descripcion" placeholder="Extras" cols="50"></textarea>
+                      <textarea class="w-100 p-10" id="descripcion_1" name="descripcion" placeholder="Extras" ></textarea>
                     </div>
                   </div>
                 </div>
@@ -454,7 +454,7 @@
                   <div class="form-group col-12">
                     <div class="">
                       <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                      <label class="form-check-label" for="invalidCheck">Estoy de acuerdo con los términos y condiciones</label>
+                      <label class="form-check-label" for="invalidCheck"><a href="privacidad.html" style="color: #000; text-decoration: none;">Estoy de acuerdo con los términos y condiciones</a></label>
                     </div>
                   </div>
                 </div>
@@ -471,9 +471,9 @@
             <img src="../assets/images/services/Taxi-Airport-Service-Torrevieja-Alicante-Murcia-Valencia.png" title="Mejores servicios de taxi desde Torrevieja hasta los aeropuertos de Alicante y Murcia" alt="Mejores servicios de taxi desde Torrevieja hasta los aeropuertos de Alicante y Murcia">
           </div>
           <div class="detail-box">
-            <h5>
+            <h3>
               Torrevieja - Aeropuerto Murcia
-            </h5>
+            </h3>
             <div>
               <button id="MurciaOrigin" class="airport-location location-background" onclick="AddOriginMurcia()">Desde aeropuerto</button>
               <button id="MurciaDrop" class="airport-location" onclick="AddDropMurcia()">Hacia aeropuerto</button>
@@ -644,7 +644,7 @@
                 <div class="form-row">
                   <div class="form-group col-12">
                     <div class="">
-                      <textarea id="descripcion_2" name="descripcion" placeholder="Extras" cols="50"></textarea>
+                      <textarea class="w-100 p-10" id="descripcion_2" name="descripcion" placeholder="Extras" ></textarea>
                     </div>
                   </div>
                 </div>
@@ -715,7 +715,7 @@
                   <div class="form-group col-12">
                     <div class="">
                       <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                      <label class="form-check-label" for="invalidCheck">Estoy de acuerdo con los términos y condiciones</label>
+                      <label class="form-check-label" for="invalidCheck"><a href="privacidad.html" style="color: #000; text-decoration: none;">Estoy de acuerdo con los términos y condiciones</a></label>
                     </div>
                   </div>
                 </div>
@@ -732,9 +732,9 @@
             <img src="../assets/images/services/Taxi-Service-National-Trip-Torrevieja.png" title="Mejor servicio de taxi desde Torrevieja a ciudad nacionales" alt="Mejor servicio de taxi desde Torrevieja a ciudad nacionales">
           </div>
           <div class="detail-box">
-            <h5>
+            <h3>
               Viaje Nacional
-            </h5>
+            </h3>
             <hr>
             <p class="description-service">
               Taxi Time Torrevieja te lleva desde la ciudad de Torrevieja a cualquier destino en España, las 24 horas del día, los 365 días del año, con precios fijos asequibles. Disfruta de viajes seguros con conductores puntuales y eficientes. Vehículo adaptado para discapacitados. <img src="../assets/images/services/wheelchair.png" >
@@ -878,7 +878,7 @@
                 <div class="form-row">
                   <div class="form-group col-12">
                     <div class="">
-                      <textarea id="descripcion_3" name="descripcion" placeholder="Extras" cols="50"></textarea>
+                      <textarea class="w-100 p-10" class="w-100 p-10" id="descripcion_3" name="descripcion" placeholder="Extras" ></textarea>
                     </div>
                   </div>
                 </div>
@@ -949,7 +949,7 @@
                   <div class="form-group col-12">
                     <div class="">
                       <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                      <label class="form-check-label" for="invalidCheck">Estoy de acuerdo con los términos y condiciones</label>
+                      <label class="form-check-label" for="invalidCheck"><a href="privacidad.html" style="color: #000; text-decoration: none;">Estoy de acuerdo con los términos y condiciones</a></label>
                     </div>
                   </div>
                 </div>
@@ -966,9 +966,9 @@
             <img src="../assets/images/services/Taxi-Renfe-Ave-Service-Torrevieja-Alicante-Murcia.png" title="Best Taxi Renfe Ave Service from Torrevieja Alicante Murcia Valencia Station" alt="Best Taxi Renfe Ave Service from Torrevieja Alicante Murcia Valencia Station">
           </div>
           <div class="detail-box">
-            <h5>
+            <h3>
               Viajes Renfe - AVE
-            </h5>
+            </h3>
             <hr>
             <p class="description-service">
               Taxi Time Torrevieja te lleva desde la ciudad de Torrevieja a la estación de tren de Alicante, las 24 horas del día, los 365 días del año, con precios fijos asequibles. Disfruta de viajes seguros con conductores puntuales y eficientes.
@@ -1128,7 +1128,7 @@
                 <div class="form-row">
                   <div class="form-group col-12">
                     <div class="">
-                      <textarea id="descripcion_4" name="descripcion" placeholder="Extras" cols="50"></textarea>
+                      <textarea class="w-100 p-10" id="descripcion_4" name="descripcion" placeholder="Extras" ></textarea>
                     </div>
                   </div>
                 </div>
@@ -1199,7 +1199,7 @@
                   <div class="form-group col-12">
                     <div class="">
                       <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                      <label class="form-check-label" for="invalidCheck">Estoy de acuerdo con los términos y condiciones</label>
+                      <label class="form-check-label" for="invalidCheck"><a href="privacidad.html" style="color: #000; text-decoration: none;">Estoy de acuerdo con los términos y condiciones</a></label>
                     </div>
                   </div>
                 </div>
@@ -1289,7 +1289,7 @@
               <div class="img-box">
                 <img src="../assets/images/w1.png" alt="Taxi confiable Torrevieja 24 horas" class="" />
               </div>
-              <div class="detail-box">
+              <div class="detail-box"> 
                 <h5>
                   Tarifas Competitivas
                 </h5>
@@ -1456,17 +1456,17 @@
               Contáctenos
             </h4>
             <div class="contact_nav">
-              <a href="">
+              <a href="https://maps.app.goo.gl/YJwsFoEehYSAEvqr5">
                 <i class="fa fa-map-marker" aria-hidden="true"></i>
                 <span>Calle Ramón Gallud, 16 Bajo, Torrevieja, Alicante</span>
               </a>
-              <a href="">
+              <a href="tel:+34653802830">
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 <span>
                   Llámanos : +34 653802830
                 </span>
               </a>
-              <a href="">
+              <a href="mailto:Taxitorrevieja38@gmail.com">
                 <i class="fa fa-envelope" aria-hidden="true"></i>
                 <span>
                   Taxitorrevieja38@gmail.com

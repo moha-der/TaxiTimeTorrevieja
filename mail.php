@@ -1,17 +1,13 @@
 <?php 
-$allowed_origin = "https://www.taxitimetorreviejatoairport.com";
 
-$origin = isset($_SERVER["HTTP_ORIGIN"]) ? $_SERVER["HTTP_ORIGIN"] : "";
-
-// Verifica si el origen de la solicitud coincide con el origen permitido
-if (strpos($origin, $allowed_origin) === 0) {
-        // Establece el encabezado Access-Control-Allow-Origin para permitir solicitudes desde la URL específica
-        header("Access-Control-Allow-Origin: $origin");
+    // Establece el encabezado Access-Control-Allow-Origin para permitir solicitudes desde la URL específica
+    header("Access-Control-Allow-Origin: *");
+    header("Access-Control-Allow-Methods: POST, OPTIONS");
         
         
     if($_SERVER["REQUEST_METHOD"] == "POST"){
-        $to = $_POST["email"]; // this is your Email address
-        $from = "simo.derfoufi.99@gmail.com"; // this is the sender's Email address
+        $to = "Taxitorrevieja38@gmail.com";
+        $from = $_POST["email"]; // this is the sender's Email address
         $first_name = $_POST["name"];
         $phone_number = $_POST["number"];
         $email = $_POST["email"];
@@ -27,7 +23,7 @@ if (strpos($origin, $allowed_origin) === 0) {
         $adults = $_POST["adult"];
         $child = $_POST["child"];
         $payment = $_POST["payment"];
-        $subject = "Booking dates";
+        $subject = "Taxi Time Torrevieja";
         $baby = $_POST["baby"];
         $infants = $_POST["infants"];
         $surname = $_POST["surname"];
@@ -85,19 +81,18 @@ if (strpos($origin, $allowed_origin) === 0) {
 
         $headers = "MIME-Version: 1.0" . "\r\n";
         $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-        $headers .= 'From: simo.derfoufi.99@gmail.com' . "\r\n";
+        $headers .= 'From: Taxitorrevieja38@gmail.com' . "\r\n";
         mail($to,$subject,$message,$headers);
+        $message2 = "Taxi Time Torrevieja" . "\r\n";
+        $message2 = "We have received your request, we will contact you" . "\r\n";
+        $message2 .= "Hemos recibido su solicitud, nos pondremos en contacto con usted";
+        mail($email,$subject,$message2,$headers);
         $response = array("mensaje" => "OK");
         header("Content-Type: application/json");
         echo json_encode($response);
     } else {
-        echo json_encode(array("mensaje" => "ERROR"));
+        echo json_encode(array("mensaje" => "No se puede acceder a esta página"));
     }
-} else {
-    // Si el origen no está permitido, devuelve un código de estado 403 (Prohibido)
-    http_response_code(403);
-    $response = ["error" => "Acceso prohibido"];
-    echo json_encode($response);
-}    
+ 
     
 ?>
